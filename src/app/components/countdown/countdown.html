@@ -1,0 +1,57 @@
+<div class="countdown">
+  <div class="countdown-counter" id="countdown-days">
+    <div class="countdown-digits">
+      <div class="countdown-digit-container"
+            ng-style="{'-webkit-transform': ' translate3d(0, 0, 0) translateY(-' + cd.days[0] * 130 + 'px)', '-ms-transform': 'translate3d(0, 0, 0) translateY(-' + cd.days[0] * 130 + 'px)', 'transform': 'translate3d(0, 0, 0) translateY(-' + cd.days[0] * 130 + 'px)'}">
+        <span ng-include="'/app/components/countdown/digits.partial.html'"></span>
+      </div>
+      <div class="countdown-digit-container"
+            ng-style="{'-webkit-transform': 'translate3d(0, 0, 0) translateY(-' + cd.days[1] * 130 + 'px)', '-ms-transform': 'translate3d(0, 0, 0) translateY(-' + cd.days[1] * 130 + 'px)', 'transform': 'translate3d(0, 0, 0) translateY(-' + cd.days[1] * 130 + 'px)'}">
+        <span ng-include="'/app/components/countdown/digits.partial.html'"></span>
+      </div>
+    </div>
+    <div class="countdown-label">days</div>
+  </div>
+  <span class="countdown-separator">:</span>
+  <div class="countdown-counter" id="countdown-hours">
+    <div class="countdown-digits">
+      <div class="countdown-digit-container"
+            ng-style="{'-webkit-transform': 'translate3d(0, 0, 0) translateY(-' + cd.hours[0] * 130 + 'px)', '-ms-transform': 'translate3d(0, 0, 0) translateY(-' + cd.hours[0] * 130 + 'px)', 'transform': 'translate3d(0, 0, 0) translateY(-' + cd.hours[0] * 130 + 'px)'}">
+        <span ng-include="'/app/components/countdown/digits.partial.html'"></span>
+      </div>
+      <div class="countdown-digit-container"
+           ng-style="{'-webkit-transform': 'translate3d(0, 0, 0) translateY(-' + cd.hours[1] * 130 + 'px)', '-ms-transform': 'translate3d(0, 0, 0) translateY(-' + cd.hours[1] * 130 + 'px)', 'transform': 'translate3d(0, 0, 0) translateY(-' + cd.hours[1] * 130 + 'px)'}">
+        <span ng-include="'/app/components/countdown/digits.partial.html'"></span>
+      </div>
+    </div>
+    <div class="countdown-label">hours</div>
+  </div>
+  <span class="countdown-separator">:</span>
+  <div class="countdown-counter" id="countdown-minutes">
+    <div class="countdown-digits">
+      <div class="countdown-digit-container"
+           ng-style="{'-webkit-transform': 'translate3d(0, 0, 0) translateY(-' + cd.minutes[0] * 130 + 'px)', '-ms-transform': 'translate3d(0, 0, 0) translateY(-' + cd.minutes[0] * 130 + 'px)', 'transform': 'translate3d(0, 0, 0) translateY(-' + cd.minutes[0] * 130 + 'px)'}">
+        <span ng-include="'/app/components/countdown/digits.partial.html'"></span>
+      </div>
+      <div class="countdown-digit-container"
+           ng-style="{'-webkit-transform': 'translate3d(0, 0, 0) translateY(-' + cd.minutes[1] * 130 + 'px)', '-ms-transform': 'translate3d(0, 0, 0) translateY(-' + cd.minutes[1] * 130 + 'px)', 'transform': 'translate3d(0, 0, 0) translateY(-' + cd.minutes[1] * 130 + 'px)'}">
+        <span ng-include="'/app/components/countdown/digits.partial.html'"></span>
+      </div>
+    </div>
+    <div class="countdown-label">minutes</div>
+  </div>
+  <span class="countdown-separator">:</span>
+  <div class="countdown-counter" id="countdown-seconds">
+    <div class="countdown-digits">
+      <div class="countdown-digit-container"
+           ng-style="{'-webkit-transform': 'translate3d(0, 0, 0) translateY(-' + cd.seconds[0] * 130 + 'px)', '-ms-transform': 'translate3d(0, 0, 0) translateY(-' + cd.seconds[0] * 130 + 'px)', 'transform': 'translate3d(0, 0, 0) translateY(-' + cd.seconds[0] * 130 + 'px)'}">
+        <span ng-include="'/app/components/countdown/digits.partial.html'"></span>
+      </div>
+      <div class="countdown-digit-container"
+           ng-style="{'-webkit-transform': 'translate3d(0, 0, 0) translateY(-' + cd.seconds[1] * 130 + 'px)', '-ms-transform': 'translate3d(0, 0, 0) translateY(-' + cd.seconds[1] * 130 + 'px)', 'transform': 'translate3d(0, 0, 0) translateY(-' + cd.seconds[1] * 130 + 'px)'}">
+        <span ng-include="'/app/components/countdown/digits.partial.html'"></span>
+      </div>
+    </div>
+    <div class="countdown-label">seconds</div>
+  </div>
+</div>

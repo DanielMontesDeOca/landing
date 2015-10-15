@@ -1,0 +1,759 @@
+@mixin skew($angle) {
+  -ms-transform: skew(0deg, $angle);
+  -webkit-transform: skew(0deg, $angle);
+  -moz-transform: skew(0deg, $angle);
+  transform: skew(0deg, $angle);
+}
+
+@mixin rotate($angle) {
+  -webkit-transform: rotate($angle);
+  -moz-transform: rotate($angle);
+  -o-transform: rotate($angle);
+  -ms-transform: rotate($angle);
+}
+
+@mixin icon-shadow() {
+  -webkit-filter: drop-shadow(-2px 6px 3px #222);
+  filter: drop-shadow(-2px 6px 3px #222);
+}
+
+@mixin box-shadow() {
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+}
+
+@mixin smooth-font() {
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin border-radius-top-right($radius) {
+  -moz-border-radius-topright: $radius;
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-radius-top-left($radius) {
+  -moz-border-radius-topleft: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-radius-bottom-right($radius) {
+  -moz-border-radius-bottomright: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin border-radius-bottom-left($radius) {
+  -moz-border-radius-bottomleft: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+$main-color: #413C42;
+$accent-color: #85CC36;
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: 21px;
+  background-color: $main-color;
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+  }
+
+  .logo {
+    width: 262px;
+    float: left;
+    padding: 3.79% 0 0 12.1%;
+
+    img, div, a {
+      display: inline-block;
+      margin: 0;
+      vertical-align: top;
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 35px;
+      letter-spacing: 4.62px;
+      margin: 0 0 0 2px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin: 0 0 0 2px;
+      color: #82B541;
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 5px;
+      line-height: 0.5;
+      text-transform: uppercase;
+    }
+  }
+
+  .nav {
+    float: right;
+    padding: 5% 12.35% 0 0;
+    font-weight: 100;
+    @include smooth-font();
+
+    a {
+      text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      margin-left: 40px;
+      letter-spacing: 0.6px;
+      line-height: 1.5;
+    }
+  }
+}
+
+.content {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.landing {
+  width: 100%;
+  background: #424446;
+
+  .skewed-section {
+    @include skew(-5deg);
+    min-height: 100px;
+    .skewed-content {
+      @include skew(5deg);
+      padding-top: 100px;
+    }
+  }
+
+  .landing-main {
+    background-color: $main-color;
+    margin-top: -200px;
+    height: 65rem;
+    .skewed-content {
+      padding-top: 200px;
+    }
+  }
+
+  .landing-accent {
+    background-color: white;
+  }
+
+
+  #timer {
+    height: 195px;
+    margin: 225px 196px 0px 196px;
+    border: 2px solid $accent-color;
+    border-radius: 20px;
+    color: white;
+
+    font-family: 'Roboto Slab', sans-serif;
+
+    font-size: 130px;
+    text-transform: uppercase;
+
+    .timer-content {
+      position: relative;
+      top: -12px;
+      text-align: center;
+    }
+
+    .countdown {
+      height: 195px;
+    }
+    .countdown-counter {
+      height: 195px;
+    }
+    .countdown-digit, .countdown-separator {
+      font-weight: 100;
+    }
+    .countdown-label {
+      font-weight: 300;
+    }
+  }
+
+  .landing-icons {
+    .landing-icons-container {
+      margin: 117px 0 0 121px;
+      @include rotate(-7.3deg);
+    }
+
+    .landing-icon {
+      height: 172px;
+      @include icon-shadow();
+      position: relative;
+
+      &:nth-child(1) {
+        z-index: 5;
+        @include rotate(-10.3deg);
+        top: 3px;
+      }
+      &:nth-child(2) {
+        z-index: 4;
+        @include rotate(15deg);
+        left: -50px;
+      }
+      &:nth-child(3) {
+        z-index: 3;
+        @include rotate(7.3deg);
+        left: -95px;
+      }
+      &:nth-child(4) {
+        z-index: 2;
+        @include rotate(-6deg);
+        left: -124px;
+        top: 7px;
+      }
+      &:nth-child(5) {
+        z-index: 1;
+        @include rotate(16deg);
+        left: -157px;
+        top: 14px;
+      }
+    }
+  }
+
+  #events {
+    height: 116.9rem;
+
+    #welcome {
+      width: 38%;
+      padding-left: 12.4%;
+
+      h1 {
+        margin: 7px 0 0 0;
+        font-size: 50px;
+        font-weight: bold;
+      }
+
+      p {
+        padding-bottom: 5px;
+        font-weight: 300;
+      }
+    }
+
+    #get-in-touch {
+      height: 490px;
+      width: 390px;
+      padding: 20px;
+      position: absolute;
+      top: -170px;
+      left: 769px;
+      text-align: center;
+      background-color: white;
+      @include box-shadow();
+
+      h1 {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 10px 3px 18px 0;
+      }
+
+      input {
+        width: 95%;
+        height: 52px;
+        margin-bottom: 18px;
+        border: 1px solid #B6B6B6;
+        border-radius: 5px;
+
+        @include smooth-font();
+        font-size: 19px;
+        font-weight: 300;
+        letter-spacing: -0.6px;
+      }
+
+      input:focus {
+        outline: 0;
+      }
+
+      input:not([type="submit"]) {
+        text-indent: 12px;
+      }
+
+      input:not([type="submit"]):focus {
+        border-color: $accent-color;
+      }
+
+      input[type="submit"] {
+        border: 0;
+        background-color: $accent-color;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 5.5px;
+        text-indent: 8px;
+        @include smooth-font();
+
+        margin-top: 22px;
+        height: 56px;
+      }
+    }
+
+    .events-icons {
+      display: inline-block;
+      text-align: center;
+      margin-top: 130px;
+      .events-icons-container {
+        width: 80%;
+        margin: 0 auto;
+        padding-left: 10px;
+      }
+      .events-icon {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 33%;
+        text-align: center;
+
+        h1 {
+          font-size: 35px;
+          font-weight: bold;
+          margin: 40px 0 16px 0;
+        }
+
+        img {
+          height: 200px;
+          vertical-align: bottom;
+        }
+
+        p {
+          width: 80%;
+          margin: 0 auto;
+
+          font-size: 14px;
+          font-weight: 300;
+        }
+      }
+    }
+
+    $table-accent-color: #99C538;
+    $table-primary-color: #303030;
+    $table-secondary-color: #424446;
+    .events-table {
+      margin-top: 85px;
+      color: white;
+
+      table {
+        border-collapse: separate; /* the default option */
+        border-spacing: 0;
+        width: 75.4%;
+        margin: 0 auto;
+      }
+
+      tr, td, th {
+        padding:0px;
+        border-width:0px;
+        margin:0px;
+        height: 73px;
+        border-right: none;
+        border-bottom: none;
+      }
+
+      th {
+        border: 1px solid $table-accent-color;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      table thead tr th:first-child {
+        text-indent: 20px;
+      }
+
+      table thead tr th:nth-child(2) {
+        text-align: left;
+        text-indent: 92px;
+      }
+
+      tr {
+        font-size: 21px;
+        font-weight: 300;
+        text-align: center;
+        letter-spacing: 0.5px;
+
+        background-color: $table-secondary-color;
+        border: 1px solid $table-secondary-color;
+        td {
+          border: 1px solid $table-secondary-color;
+          border-right: 1px solid $table-secondary-color;
+          border-left: 1px solid $table-secondary-color;
+        }
+      }
+
+      tr:nth-child(odd) {
+        background-color: $table-primary-color;
+        border: 1px solid $table-primary-color;
+        td {
+          border: 1px solid $table-primary-color;
+          border-right: 1px solid $table-primary-color;
+          border-left: 1px solid $table-primary-color;
+        }
+
+        .events-table-action {
+          .events-round-button-container {
+            a {
+              color: $table-primary-color;
+            }
+          }
+        }
+      }
+
+      thead tr {
+        background-color: $table-accent-color !important;
+        letter-spacing: 0;
+      }
+
+      .events-table-time {
+        width: 20%;
+        padding-left: 14px;
+      }
+
+      .events-table-stuff {
+        width: 68%;
+        text-align: left;
+        padding-left: 95px;
+        letter-spacing: 0.5px;
+      }
+
+      .events-table-action {
+        width: 13%;
+
+        .events-round-button-container {
+          $size: 33px;
+          width: $size;
+          padding-bottom: $size;
+          margin: 0 auto;
+          height:0;
+          border-radius: 50%;
+          overflow:hidden;
+          background: white;
+
+          &:hover{
+            background: $table-accent-color;
+          }
+
+          a {
+            text-decoration: none;
+            color: $table-secondary-color;
+            font-size: 30px;
+            font-weight: bold;
+          }
+        }
+      }
+
+      $table-border-radius: 15px;
+
+      table tr:last-child td:first-child {
+        @include border-radius-bottom-left($table-border-radius);
+      }
+
+      table tr:last-child td:last-child {
+         @include border-radius-bottom-right($table-border-radius);
+      }
+
+      table thead tr th:first-child {
+        @include border-radius-top-left($table-border-radius);
+      }
+
+      table thead tr th:last-child {
+        @include border-radius-top-right($table-border-radius);
+      }
+    }
+
+    .events-table-description {
+      font-size: 14px;
+      font-weight: 100;
+      text-align: center;
+      text-indent: 3px;
+      width: 62%;
+      margin: 37px auto;
+    }
+  }
+
+  #rewards {
+    height: 41.45rem;
+  }
+
+  #speakers {
+    height: 114.4rem;
+  }
+
+  #sponsors {
+    height: 45.7rem;
+  }
+
+
+}
+
+.footer {
+  background-color: $accent-color;
+  height: 9.3rem;
+}
+
+@media only screen and (max-width: 980px) {
+  .header {
+    .logo {
+      padding: 3% 0 0 0;
+    }
+    .nav {
+      padding-right: 0;
+    }
+  }
+
+  .landing {
+    #timer {
+      margin: 180px 0 0 0;
+      font-size: 110px;
+
+      .timer-content {
+        top: 0px;
+      }
+    }
+
+    .landing-icons {
+      .landing-icons-container {
+        margin: 95px 0 0 10px;
+      }
+
+      .landing-icon {
+        height: 115px;
+      }
+    }
+
+    #events {
+      #get-in-touch {
+        height: 460px;
+        width: 250px;
+        top: -100px;
+        left: 55%;
+
+        h1 {
+          font-size: 33px;
+          margin: 10px 3px 27px 0;
+        }
+
+        input {
+          height: 48px;
+        }
+
+        input[type="submit"] {
+          text-indent: -3px;
+          height: 52px;
+        }
+      }
+
+      .events-icons {
+        margin-top: 70px;
+        .events-icons-container {
+          padding-left: 0;
+          width: 85%;
+        }
+
+        .events-icon {
+          img {
+            height: 150px;
+          }
+
+          h1 {
+            margin-top: 25px;
+            font-size: 25px;
+          }
+
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .events-table {
+        margin-top: 70px;
+
+        table {
+          width: 80%;
+        }
+
+        th {
+          font-size: 25px;
+        }
+
+        td {
+          font-size: 14px;
+        }
+
+        .events-table-time {
+          padding-left: 0;
+        }
+
+        .events-table-stuff {
+          padding-left: 10px;
+          text-indent: 0;
+        }
+      }
+
+      .events-table-description {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .content {
+    padding: 0 20px 0 20px;
+  }
+}
+
+
+@media only screen and (max-width: 640px) {
+  .header {
+    .logo {
+      padding: 3% 0 0 0;
+    }
+    .nav {
+      padding: 0;
+      float: none;
+      display: inline-block;
+      margin: 10px 0 0 0;
+      a {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .content {
+    padding: 0 10px 0 10px;
+  }
+
+  .landing {
+    .landing-main {
+      height: 48rem;
+    }
+    #timer {
+      margin: 170px 0 0 0;
+      height: 120px;
+      font-size: 33px;
+
+      .timer-content {
+        top: 20px;
+      }
+
+      .countdown-label {
+        text-indent: -4px;
+      }
+    }
+
+    .landing-icons {
+      .landing-icons-container {
+        margin: 40px 0 0 15px;
+      }
+
+      .landing-icon {
+        height: 50px;
+        position: static;
+      }
+    }
+
+    #events {
+      height: auto;
+
+      #welcome {
+        margin-top: -50px;
+        width: 80%;
+      }
+
+      #get-in-touch {
+        position: static;
+        height: 80%;
+        width: 75%;
+        margin: 30px auto;
+
+        input {
+          height: 40px;
+          margin-bottom: 13px;
+        }
+
+        input[type="submit"] {
+          height: 45px;
+          margin-top: 15px;
+        }
+      }
+
+      .events-icons {
+        margin-top: 35px;
+        .events-icons-container {
+          width: 100%;
+        }
+        .events-icon {
+          width: 85%;
+          margin-bottom: 35px;
+        }
+      }
+
+      .events-table {
+        margin-top: 35px;
+
+        table {
+          width: 85%;
+        }
+
+        th {
+          font-size: 15px;
+        }
+
+        td {
+          font-size: 12px;
+        }
+
+        table thead tr th:first-child {
+          text-indent: 0;
+        }
+
+        table thead tr th:nth-child(2) {
+          text-align: center;
+          text-indent: 0;
+        }
+
+        .events-table-time {
+          padding-left: 0;
+        }
+
+        .events-table-stuff {
+          padding-left: 10px;
+          text-indent: 0;
+        }
+
+        .events-table-action {
+          width: 13%;
+
+          .events-round-button-container {
+            $size: 22px;
+            width: $size;
+            padding-bottom: $size;
+
+            a {
+              position: relative;
+              top: -3px;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+
+      .events-table-description {
+        width: 85%;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
