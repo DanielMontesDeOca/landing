@@ -31,7 +31,6 @@
     vm.hours = [0, 0];
     vm.minutes = [0, 0];
     vm.seconds = [0, 0];
-    vm.seconds = 1;
     interval();
 
     function interval() {
@@ -42,7 +41,6 @@
           vm.hours = getDigits(diff.hours());
           vm.minutes = getDigits(diff.minutes());
           vm.seconds = getDigits(diff.seconds());
-          vm.second = vm.seconds[1];
           interval();
         }
       }, 1000);
